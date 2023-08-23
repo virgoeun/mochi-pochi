@@ -22,27 +22,20 @@ let moleTimerId;
 let obstacleTimerId;
 let currentObst;
 
+const obstacleArray =[];
 
-instructionButton.addEventListener("click", function() {
-    
-    if (gameInstruction.style.display === "none") {
-        gameInstruction.style.display = "display";
-    } else {
-        gameInstruction.style.display = "none";
-    }
+
+
+
+instructionButton.addEventListener("click", () => {
+gameInstruction.style.display="block"
+instructionButton.style.display="none";
+})
+gameInstruction.addEventListener("click", ()=>{
+instructionButton.style.display="block"
+gameInstruction.style.display="none";
 })
 
-/* instructionButton.addEventListener("click", function show () {
-    gameInstruction.style.display = "block";
-    instructionButton.style.display = "none";
-    
-})
-
-gameInstruction.addEventListener("click", function show () {
-    gameInstruction.style.display = "none";
-    instructionButtonTwo.style.display="block";
- })
-*/
 
 
 let game = new Game();
@@ -152,9 +145,55 @@ restartButton.addEventListener("click", function () {
     location.reload();
   }
 
+function generateObstacle () {
+obstacleTimerId = setInterval ((square) => {
+    squareItem.forEach ((square)=> {
+        square.classList.remove("obstacle")
+
+        let existingObstacleImage = square.querySelector("img.obstacle");
+        if(existingObstacleImage) {
+            existingObstacleImage.remove();
+        }
+
+    })
+
+
+    let randomIndex1 = getRandom();
+    if(randomIndex1===currentMole) {
+        randomIndex1 = getRandom();
+    }
+    let randomObst1 = squareItem[randomIndex1];
+    randomObst1.classList.add("obstacle")
+
+    let ObstacleImage1 = document.createElement("img");
+    ObstacleImage1.src = "./Icons/new/greenmochismile.png";
+    randomObst1.appendChild(ObstacleImage1);
+    ObstacleImage1.classList.add("obstacle")
+
+
+   let randomIndex2 = getRandom();
+   if(randomIndex2 ===randomIndex1 || randomIndex2===currentMole) {
+    randomIndex2 =getRandom();
+   }
+   let randomObst2 = squareItem[randomIndex2];
+    randomObst2.classList.add("obstacle")
+
+    let ObstacleImage2 = document.createElement("img");
+    ObstacleImage2.src = "./Icons/new/pinkmochi.png";
+    randomObst2.appendChild(ObstacleImage2);
+    ObstacleImage2.classList.add("obstacle")
+
+
+
+}, 1000)
+
+}
+
+
+generateObstacle ();
 
     
-  function getObstaclesOne () {
+ /* function getObstaclesOne () {
     
     //if(currentObst) {
     //currentObst.innerHTML=""} 
@@ -168,12 +207,24 @@ restartButton.addEventListener("click", function () {
                 existingObstacleImage.remove();
             }
     });
+let randomIndex = getRandom();
+obstacleArray.forEach(obstacle => {
+
+if (randomIndex===obstacle.id) {
+    randomIndex = getRandom();
+} 
+
+})
+
 
     let randomObst = squareItem[getRandom()];
     randomObst.classList.add("obstacle")
         
-    currentObst =randomObst.id //1,8,0...
-     
+    
+    currentObst ={id:randomObst.id,number:1}
+
+    obstacleArray.push(currentObst);
+
         let ObstacleImage = document.createElement("img");
         ObstacleImage.src = "/Icons/new/greenmochismile.png";
         randomObst.appendChild(ObstacleImage);
@@ -183,8 +234,9 @@ restartButton.addEventListener("click", function () {
     }
 
    getObstaclesOne ();
+*/
 
-
+  /*
    function getObstaclesTwo () {
     
    //if(currentObst) {
@@ -251,12 +303,7 @@ restartButton.addEventListener("click", function () {
      }
  
     getObstaclesThree ();
-
-
-
-
-
-
+*/
 
 
 
