@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game</title>
+    <meta charset="UTF-8" />
+    
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main> 
+
+      <div id="start-screen">
+        <img class ="maintitle" src="./Icons/new/titletwo.png" alt="maintitle">
+        <img class ="mainimage"src="./Icons/mainimage.png" alt="mainimage">
+        <img class ="startbutton" src="./Icons/new/startbutton.png" alt="startbutton"></img>
+      </div>
+
+    
+      <div id="game-screen">
+        <div id="game-container">
+        <img id="panel-control" src="./Icons/stats.png"></img>
+         <img id="score" src="./Icons/score.png"></img>
+        <img id="miss" src="./Icons/miss.png"></img>
+        <img id="time-left" src="./Icons/timeleft.png"></img>
+        </div>
+        <div id="game-container-two"> <!-- inside "game-screen"-->
+          <h2>Your Score</h2>
+          <h2 id="score-two">0</h2>
+          <h2 id="miss-two">0</h2>
+          <h2 id="time-left-two">Time Left:</h2>
+        </div>
+        <div id ="grid">
+          <div class = "square" id = "0"> </div>
+          <div class = "square" id = "1"> </div>
+          <div class = "square" id = "2"> </div>
+          <div class = "square" id = "3"> </div>
+          <div class = "square" id = "4"> </div>
+          <div class = "square" id = "5"> </div>
+          <div class = "square" id = "6"> </div>
+          <div class = "square" id = "7"> </div>
+          <div class = "square" id = "8">  </div>
+        </div> 
+       
+      </div>
+
+    <div id="game-end">
+     <img class="gameover-image" src="./Icons/gameoverbtn.png" alt="gameover" />
+      <br />
+      <img class="restart-button" src="./Icons/new/restartbutton.png" alt ="restartbutton">Restart</img>
+    </div>
+
+  </main>
+ <!-- <script type="text/javascript" src="js/mochi.js"></script> -->
+
+  <script type="text/javascript" src="js/game.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+
+  </body>
+</html>
