@@ -1,13 +1,14 @@
 window.onload = function () {
 
+
 const timeLeft = document.querySelector("#time-left-two");
 const scoreDisplay = document.querySelector("#score-two");
 const missDisplay = document.querySelector("#miss-two");
 const squareItem = document.querySelectorAll(".square");
 const startImage = document.querySelector('.startbutton');
 const restartButton = document.querySelector(".restart-button");
-console.log(restartButton);
-
+const gameInstruction = document.getElementById("gameinstruction");
+const instructionButton = document.getElementById("instructionbutton")
 
 // window.requestAnimationFrame(() => this.gameLoop()); WHERE?
 
@@ -17,6 +18,31 @@ let miss =0;
 let currentTime =60;
 let countDownTimerId; 
 let moleTimerId;
+
+let obstacleTimerId;
+let currentObst;
+
+
+instructionButton.addEventListener("click", function() {
+    
+    if (gameInstruction.style.display === "none") {
+        gameInstruction.style.display = "display";
+    } else {
+        gameInstruction.style.display = "none";
+    }
+})
+
+/* instructionButton.addEventListener("click", function show () {
+    gameInstruction.style.display = "block";
+    instructionButton.style.display = "none";
+    
+})
+
+gameInstruction.addEventListener("click", function show () {
+    gameInstruction.style.display = "none";
+    instructionButtonTwo.style.display="block";
+ })
+*/
 
 
 let game = new Game();
@@ -46,10 +72,10 @@ startImage.addEventListener("click", function () {
 }
 */
 
-
-
-// const restartButton = document. // CHECK!!
-        
+function getRandom () {
+    let randomNum = Math.floor(Math.random()*squareItem.length);
+    return randomNum.toString();
+    }
 
 
 function setMole() {
@@ -65,12 +91,12 @@ function setMole() {
             }
     });
 
-        let randomIndex = Math.floor(Math.random() * squareItem.length);
-        let randomMole =squareItem[randomIndex];
+        //let randomIndex = Math.floor(Math.random() * squareItem.length);
+        // let randomMole =squareItem[randomIndex];
+        let randomMole = squareItem[getRandom()];
         randomMole.classList.add("mole")
         
         currentMole =randomMole.id
-        
         
         let moleImage = document.createElement("img");
         moleImage.src = "/Icons/new/angreymochi2.png";
@@ -78,7 +104,7 @@ function setMole() {
         moleImage.classList.add("mole")
 
     
-    }, 900)
+    }, 1000)
    
     }
 
@@ -87,22 +113,18 @@ function setMole() {
 
 squareItem.forEach(square => square.addEventListener("click", function () {
     
-    
-    
     if(square.id===currentMole) {
         score++;
-        console.log(score);
         scoreDisplay.innerHTML=`${score}`;
 
      } 
 
      if (square.id!==currentMole) {
         miss++
-        console.log(miss);
         missDisplay.innerHTML = `${miss}`;
      }
 
-     if (miss >=2) {
+     if (miss >=3) {
         game.endGame();
      }
 
@@ -116,6 +138,8 @@ function timeCount (){
     if (currentTime ===0) {
         clearInterval(moleTimerId);
         clearInterval(countDownTimerId);
+        clearInterval(obstacleTimerId);
+        game.endGame();
     }
 }
 
@@ -127,6 +151,114 @@ restartButton.addEventListener("click", function () {
   function restartGame() {
     location.reload();
   }
+
+
+    
+  function getObstaclesOne () {
+    
+    //if(currentObst) {
+    //currentObst.innerHTML=""} 
+
+    obstacleTimerId = setInterval (function () {
+        squareItem.forEach((square) => {
+            square.classList.remove("obstacle")
+        
+        let existingObstacleImage = square.querySelector("img.obstacle");
+            if (existingObstacleImage) {
+                existingObstacleImage.remove();
+            }
+    });
+
+    let randomObst = squareItem[getRandom()];
+    randomObst.classList.add("obstacle")
+        
+    currentObst =randomObst.id //1,8,0...
+     
+        let ObstacleImage = document.createElement("img");
+        ObstacleImage.src = "/Icons/new/greenmochismile.png";
+        randomObst.appendChild(ObstacleImage);
+        ObstacleImage.classList.add("obstacle")
+    
+    }, 1000)
+    }
+
+   getObstaclesOne ();
+
+
+   function getObstaclesTwo () {
+    
+   //if(currentObst) {
+    //currentObst.innerHTML=""} 
+
+    obstacleTimerId = setInterval (function () {
+        squareItem.forEach((square) => {
+            square.classList.remove("obstacle-two")
+        
+        let existingObstacleImage = square.querySelector("img.obstacle-two");
+            if (existingObstacleImage) {
+                existingObstacleImage.remove();
+            }
+    });
+
+    let randomObst = squareItem[getRandom()];
+    randomObst.classList.add("obstacle-two")
+        
+    currentObst =randomObst.id //1,8,0...
+     
+        let ObstacleImage = document.createElement("img");
+        ObstacleImage.src = "/Icons/new/pinkmochi.png";
+        randomObst.appendChild(ObstacleImage);
+        ObstacleImage.classList.add("obstacle-two")
+
+    
+    }, 3000)
+    }
+
+   getObstaclesTwo ();
+
+
+   function getObstaclesThree () {
+    
+    //if(currentObst) {
+     //currentObst.innerHTML=""} 
+ 
+     obstacleTimerId = setInterval (function () {
+         squareItem.forEach((square) => {
+             square.classList.remove("obstacle-three")
+         
+         let existingObstacleImage = square.querySelector("img.obstacle-three");
+             if (existingObstacleImage) {
+                 existingObstacleImage.remove();
+             }
+     });
+ 
+     let randomObst = squareItem[getRandom()];
+     randomObst.classList.add("obstacle-three")
+ 
+     
+         
+     currentObst =randomObst.id //1,8,0...
+ 
+         
+      
+         let ObstacleImage = document.createElement("img");
+         ObstacleImage.src = "/Icons/new/yellowmochi.png";
+         randomObst.appendChild(ObstacleImage);
+         ObstacleImage.classList.add("obstacle-three")
+ 
+     
+     }, 5000)
+     }
+ 
+    getObstaclesThree ();
+
+
+
+
+
+
+
+
 
 }
 

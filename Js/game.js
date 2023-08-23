@@ -9,6 +9,7 @@ class Game {
       this.score = 0;
       this.miss = 0;
       this.timeLeft = 60;
+      
 
     }
   
@@ -17,6 +18,8 @@ class Game {
       this.gameScreen.style.height = `${this.height}px`;
       this.startScreen.style.display = "none"; // hide the start screen
       this.gameScreen.style.display = "block";
+      let mySound = new Audio('my_audio_file.wav')
+      mySound.play()
       
     }
 
@@ -26,6 +29,4 @@ class Game {
       this.gameScreen.style.display = "none"; // hide the game screen
       this.gameEndScreen.style.display = "block";
     } 
-    //this.player.element.remove();
-    //this.obstacles.forEach(obstacle => obstacle.element.remove()); 
 }

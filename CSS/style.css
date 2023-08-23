@@ -75,6 +75,45 @@ main {
 
   }
 
+  #gameinstruction {
+    width:200px;
+    height:400px;
+    padding :0;
+    margin-top: -50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    position: relative;
+    display:none;
+  }
+  
+  
+  
+  #instructionbutton {
+    width:150px;
+    height: 70px;
+    padding :0;
+    margin-top: -50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    position: relative;
+    display:block;
+
+  }
+
+  
+
+
+  /* .modal {
+    display:none; /*display by default
+    position: fixed; /*fixed place; */
+    /* width:100px;
+    height:150px;
+    overflow: auto; /*Enable scroll if needed */
+    /* z-index: 1; Sit on top 
+  } */
+
   #game-container-two {
     color:black;
     display:flex;
@@ -167,14 +206,36 @@ main {
     width:200px;
     height:200px;
     background-color: #cdb9ea;
-        }
+}
     
-        .mole-two {
-   
-            width:200px;
-            height:200px;
-            background-color: white;
-                }
+.mole-two {
+    width:200px;
+    height:200px;
+    background-color: white;
+}
+
+.obstacle {
+  width:200px;
+  height:200px;
+  background-color: red;
+
+}
+
+.obstacle-two {
+  width:200px;
+  height:200px;
+  background-color: blue;
+
+}
+
+.obstacle-three {
+  width:200px;
+  height:200px;
+  background-color: black;
+
+}
+
+
             
   .restart-button {
 
