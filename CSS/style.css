@@ -7,10 +7,7 @@
     font-family: 'Lilita One';
     font-style: normal;
     font-weight: 400;
-}
- 
-
-
+  }
 
 #start-screen {
   background-image: url(../Pics/background.png);
@@ -19,7 +16,7 @@
   width:100%;
   background-repeat: no-repeat;
   background-position:center;
-  animation: shaking 2s infinite;
+  animation: shaking 2.5s infinite;
 }
 
 @keyframes shaking {
@@ -31,18 +28,19 @@
 
 #icon {
   width:5%;
+  padding-left: 25px;
+  padding-top:20px;
   cursor:pointer;
 }
-  .title
-  {
+
+  .title {
     display:block;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
   }
   
-  .mainimage 
-  {
+  .mainimage {
     display: block;
     margin-top:-20px;
     margin-left: auto;
@@ -50,13 +48,13 @@
     width: 30%;
   }
 
-
   .main-button {
     display:flex;
     justify-content: center;
     flex-direction: row;
+    margin-top:110px;
     gap: 150px;
-    }
+  }
 
  .startbutton {
     width:15%;
@@ -69,7 +67,7 @@
 
 #gameinstruction {
   display:block;
-  margin-top:-400px;
+  margin-top:-600px;
   margin-left:0;
   margin-right:0;
   display:none;
@@ -92,7 +90,7 @@
     background-image: url(../Pics/bg.png);
     background-size: cover;
     height: 100vh
-    }
+  }
 
   #game-container-two {
     font-size:20px;
@@ -104,43 +102,43 @@
     padding-top:20px;
     gap:10px;
     padding-bottom: 20px;
-
   }
 
 #grid {
     width:642px; 
     height:642px; 
+    overflow: hidden;
     margin: 0 auto;
     background-size: cover;
     border: 5px solid #F27E93;
     display:flex;
     flex-wrap: wrap;
-    }
+  }
 
-    
 
 #grid div {
     width:200px;
     height:200px;
-    border: 7px solid #F27E93;
-    }   
+    border: 7px solid #F27E93; 
+  }   
     
 .mole {
     width:200px;
     height:200px;
-    background-color: #F7F6EA;
-}
+    background-color: #F29C94;
+  }
     
 .mole-two {
     width:200px;
     height:200px;
-    background-color: white;
-}
+    background-color:#F7F6EA;
+  }
 
 .obstacle {
   width:200px;
   height:200px;
 }
+
 #game-end {
   background-color: #F27E93;
   height:100vh;
@@ -152,29 +150,25 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-
 }
-
-
-
 
 .gameover-text {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 30%;
 }
 
 .restart-button {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top:-30px;
   width: 16%;
-
 }
 
 .restart-button:hover {
-  animation: shake 0.5s;
+  animation: shake 0.3s;
   animation-iteration-count: infinite;
 }
 

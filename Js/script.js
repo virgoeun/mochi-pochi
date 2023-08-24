@@ -7,7 +7,7 @@ window.onload = function () {
   const restartButton = document.querySelector(".restart-button");
   const gameInstruction = document.getElementById("gameinstruction");
   const instructionButton = document.getElementById("instructionbutton");
-
+ 
   let currentMole;
   let score = 0;
   let miss = 0;
@@ -17,11 +17,15 @@ window.onload = function () {
   let obstacleTimerId;
 
   instructionButton.addEventListener("click", () => {
+    const startAudio = new Audio("/Sound/softclick.wav");
+    startAudio.play();
     gameInstruction.style.display = "block";
     instructionButton.style.display = "none";
     startImage.style.display = "none";
   });
   gameInstruction.addEventListener("click", () => {
+    const startAudio = new Audio("/Sound/softclick.wav");
+    startAudio.play();
     instructionButton.style.display = "block";
     gameInstruction.style.display = "none";
     startImage.style.display = "block";
@@ -36,7 +40,7 @@ window.onload = function () {
   });
 
   function startGame() {
-    game.start(); // from Game.js file, method .start()
+    game.start(); 
   }
 
   function getRandom() {
@@ -48,7 +52,7 @@ window.onload = function () {
     moleTimerId = setInterval(function () {
       squareItem.forEach((square) => {
         square.classList.remove("mole");
-        square.classList.add("mole-two");d
+        square.classList.add("mole-two");
 
         let existingMoleImage = square.querySelector("img.mole");
         if (existingMoleImage) {
@@ -65,7 +69,7 @@ window.onload = function () {
       moleImage.src = "./Pics/boo.png";
       randomMole.appendChild(moleImage);
       moleImage.classList.add("mole");
-    }, 1000);
+    }, 1200);
   }
 
   setMole();
@@ -134,13 +138,35 @@ window.onload = function () {
         randomIndex4 = getRandom();
       }
       let randomObst4 = squareItem[randomIndex4];
-      randomObst3.classList.add("obstacle");
+      randomObst4.classList.add("obstacle");
 
       let ObstacleImage4 = document.createElement("img");
       ObstacleImage4.src = "./Pics/teacher.png";
       randomObst4.appendChild(ObstacleImage4);
       ObstacleImage4.classList.add("obstacle");
-    }, 1000);
+
+
+      let randomIndex5 = getRandom();
+      if (
+        randomIndex5 === randomIndex1 ||
+        randomIndex5 === randomIndex2 ||
+        randomIndex5 === randomIndex3 ||
+        randomIndex5 === randomIndex4 ||
+        randomIndex5 === currentMole 
+      ) {
+        randomIndex5 = getRandom();
+      }
+      
+      let randomObst5 = squareItem[randomIndex5];
+      randomObst5.classList.add("obstacle");
+
+      let ObstacleImage5 = document.createElement("img");
+      ObstacleImage5.src = "./Pics/purple.png";
+      randomObst5.appendChild(ObstacleImage5);
+      ObstacleImage5.classList.add("obstacle");
+
+
+    }, 1200);
   }
 
 
@@ -148,7 +174,7 @@ window.onload = function () {
 
   squareItem.forEach((square) =>
     square.addEventListener("click", function () {
-      const myAudio = new Audio("/Sound/boo.wav");
+      const myAudio = new Audio("/Sound/bubblesound.wav");
       myAudio.play();
 
       if (square.id === currentMole) {

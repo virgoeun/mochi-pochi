@@ -7,7 +7,7 @@
 [Play Game](http://github.com)
 
 ## Description
-<img src="./Pics/monster.png" alt="Alt text" title="Optional title">
+<img src="./Pics/monsters.png" alt="Alt text" title="Optional title">
 <br>
 <br>
 <br>
@@ -23,7 +23,7 @@ Each user has 1 minute time and 5 chances to miss, and if you get "Boo"(on click
 - Users click **'Find Boo'** image button to start the game.
 - On the start screen, users can check **'How To Play'** image button for **instructions**, which has a click & pops up & close function.
 - On the upper right corner, there is **music icon (on/off)** that users can control music sound.
-- On the game-screen, there is one main target to click and 4 different obstacles to confuse users. Each item pops up randomly on differet box of grid without overlap.
+- On the game-screen, there is one main target to click and 5 different obstacles to confuse users. Each item pops up randomly on differet box of grid without overlap.
 - There is a **game panel** that users can check time-left, score, and the number of miss.
 - On the **Time-Left**, the time limit is 1 minute and it starts counting down till it's 0.
 - When 1 minute is up, the game stops - this is for giving a time pressure to make a game more challenging. 
@@ -77,7 +77,7 @@ Each user has 1 minute time and 5 chances to miss, and if you get "Boo"(on click
 - get Random (index number for 9*9 grid)
 - setMole() function (target)
 - setInterval for the target & each obstacles
-- getObstacle function to get 4 obstales on the random position of grid without overlap
+- getObstacle function to get 5 obstales on the random position of grid without overlap
 - click Event for score & miss points and gameover
 - timeCount to track Time-Left
 - clearInterval to cancel each setInterval oftarget, obstacles and time and stop the game
@@ -87,6 +87,6 @@ Each user has 1 minute time and 5 chances to miss, and if you get "Boo"(on click
 ## Extra Links
 
 - [Notion Link](https://www.notion.so/f61dba19b85843da8cb81cc8ced45aaa?v=b554d2db337b40a9ace406e5749c4f8f)
-- [Slides Link](http://slides.com)
+- [Slides Link](https://docs.google.com/presentation/d/1qnjEPpRRqf5Ppr8rTeAcEVSfLK1KsevOmA9syoTN8lM/edit?usp=sharing)
 - [Github repository Link](https://github.com/virgoeun/mochi-pochi)
 - [Deployment Link](http://github.com)
