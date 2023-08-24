@@ -19,8 +19,9 @@ Each user has 1 minute time and 5 chances to miss, and if you get "Boo"(on click
 <br>
 
 ## Main Functionality
-- Have a seperate start page and users click **'Find Boo'** image button to start the game.
-- On the start screen, users can check **'How To Play'** image button for instructions, which has a click & pops up & close function.
+- Have a seperate start page with shake animation 
+- Users click **'Find Boo'** image button to start the game.
+- On the start screen, users can check **'How To Play'** image button for **instructions**, which has a click & pops up & close function.
 - On the upper right corner, there is **music icon (on/off)** that users can control music sound.
 - On the game-screen, there is one main target to click and 4 different obstacles to confuse users. Each item pops up randomly on differet box of grid without overlap.
 - There is a **game panel** that users can check time-left, score, and the number of miss.
@@ -30,7 +31,7 @@ Each user has 1 minute time and 5 chances to miss, and if you get "Boo"(on click
 - On the **Score**, by clicking the right target, you get the +1 score and there is no limit.
 - On the **Miss**, by clicking the wrong one, which is empty box or obsticle, you get your 'Miss' point, which is up to 5.
 - When the Miss point is over 5, the game stops and shows the **Game Over** screen.
-- On the **Game Over** screen, users can get back to the start screen to restart the game(**Do It Again** image button).
+- On the **Game Over** screen, users can get back to the start screen to restart the game(**Do It Again** image button with shake animation).
 
 <br>
 

@@ -67,17 +67,13 @@
     margin-left:0;
   }
 
-
-
-
 #gameinstruction {
   display:block;
-  margin-top:-530px;
+  margin-top:-400px;
   margin-left:0;
   margin-right:0;
   display:none;
   }
-  
   
   #instructionbutton {
     width:15%;
@@ -97,8 +93,6 @@
     background-size: cover;
     height: 100vh
     }
-
-
 
   #game-container-two {
     font-size:20px;

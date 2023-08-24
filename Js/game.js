@@ -8,7 +8,6 @@ class Game {
     this.score = 0;
     this.miss = 0;
     this.timeLeft = 60;
-    this.squareItem = document.querySelectorAll(".square");
   }
 
 
@@ -19,6 +18,8 @@ class Game {
     this.startScreen.style.display = "none"; // hide the start screen
     this.gameScreen.style.display = "block";
   }
+
+
     
 
   endGame() 
