@@ -84,7 +84,7 @@ window.onload = function () {
       moleImage.src = "./Pics/boo.png";
       randomMole.appendChild(moleImage);
       moleImage.classList.add("mole"); //<div class = sqaure mole-two mole" id="8"></div> -> <img src = "..." class = "mole">
-    }, 1200);
+    }, 1000);
   }
 
   setMole();
@@ -101,12 +101,13 @@ window.onload = function () {
         }
       });
 
-
       let randomIndex1 = getRandom();
       if (randomIndex1 === currentMole) {
         randomIndex1 = getRandom();
       }
       let randomObst1 = squareItem[randomIndex1]; 
+
+
       // console.log(randomObst1); <div class "square mole-two obstacle" id="5"></div>
       randomObst1.classList.add("obstacle");
 
@@ -186,8 +187,7 @@ window.onload = function () {
       randomObst5.appendChild(obstacleImage5);
       obstacleImage5.classList.add("obstacle");
 
-
-    }, 1200);
+    }, 500);
   }
 
 
