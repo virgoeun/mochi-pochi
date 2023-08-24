@@ -43,6 +43,7 @@ Each user has 1 minute time and 5 chances to miss, and if you get "Boo"(on click
 - More design & visual elements (e.g., sound to the end screen)
 
 <br>
+
 ## Technologies Used
 - HTML
 - CSS
