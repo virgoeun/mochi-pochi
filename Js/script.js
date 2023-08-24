@@ -1,12 +1,13 @@
 window.onload = function () {
-  const timeLeft = document.querySelector("#time-left-two");
-  const scoreDisplay = document.querySelector("#score-two");
-  const missDisplay = document.querySelector("#miss-two");
   const squareItem = document.querySelectorAll(".square");
   const startImage = document.querySelector(".startbutton");
   const restartButton = document.querySelector(".restart-button");
   const gameInstruction = document.getElementById("gameinstruction");
   const instructionButton = document.getElementById("instructionbutton");
+
+  const scoreDisplay = document.querySelector("#score");
+  const missDisplay = document.querySelector("#miss");
+  const timeLeft = document.querySelector("#time-left");
  
   let currentMole;
   let score = 0;
@@ -16,6 +17,8 @@ window.onload = function () {
   let moleTimerId;
   let obstacleTimerId;
 
+
+  // start-screen instruction pops up control 
   instructionButton.addEventListener("click", () => {
     const startAudio = new Audio("/Sound/softclick.wav");
     startAudio.play();
@@ -23,6 +26,7 @@ window.onload = function () {
     instructionButton.style.display = "none";
     startImage.style.display = "none";
   });
+
   gameInstruction.addEventListener("click", () => {
     const startAudio = new Audio("/Sound/softclick.wav");
     startAudio.play();
@@ -31,7 +35,10 @@ window.onload = function () {
     startImage.style.display = "block";
   });
 
+
   let game = new Game();
+
+  //Start the game!
 
   startImage.addEventListener("click", function () {
     startGame();
@@ -43,37 +50,46 @@ window.onload = function () {
     game.start(); 
   }
 
+
+  //Fucntion: get Random Index 
   function getRandom() {
-    let randomNum = Math.floor(Math.random() * squareItem.length);
+    let randomNum = Math.floor(Math.random() * squareItem.length); // range: 0 - 8
     return randomNum.toString();
   }
 
+
+  //Function : create a Target on a random index
   function setMole() {
     moleTimerId = setInterval(function () {
-      squareItem.forEach((square) => {
+      squareItem.forEach((square) => { // array method
         square.classList.remove("mole");
-        square.classList.add("mole-two");
-
-        let existingMoleImage = square.querySelector("img.mole");
+        square.classList.add("mole-two"); // create a grid with 8 white boxes & 1 pink box!
+        
+        // an existing mole image (an <img> element with the class "mole") within the square
+        let existingMoleImage = square.querySelector("img.mole");  
         if (existingMoleImage) {
-          existingMoleImage.remove();
+          existingMoleImage.remove(); 
+          // before creating a new randomMole with an image, this makes sure to remove existing one
+          // so that we have only one randomMole at a time 
         }
       });
 
-      let randomMole = squareItem[getRandom()];
-      randomMole.classList.add("mole");
+      let randomMole = squareItem[getRandom()]; // Get a random element from the "squareItem" array
 
-      currentMole = randomMole.id;
+      randomMole.classList.add("mole"); //Add the "mole" class to the randomly selected square:  <div class = sqaure mole-two mole" id="8"></div>
 
-      let moleImage = document.createElement("img");
+      currentMole = randomMole.id; 
+
+      let moleImage = document.createElement("img"); // Create an image element for the mole
       moleImage.src = "./Pics/boo.png";
       randomMole.appendChild(moleImage);
-      moleImage.classList.add("mole");
+      moleImage.classList.add("mole"); //<div class = sqaure mole-two mole" id="8"></div> -> <img src = "..." class = "mole">
     }, 1200);
   }
 
   setMole();
 
+  // create Obstacles!
   function generateObstacle() {
     obstacleTimerId = setInterval((square) => {
       squareItem.forEach((square) => {
@@ -90,26 +106,31 @@ window.onload = function () {
       if (randomIndex1 === currentMole) {
         randomIndex1 = getRandom();
       }
-      let randomObst1 = squareItem[randomIndex1];
+      let randomObst1 = squareItem[randomIndex1]; 
+      // console.log(randomObst1); <div class "square mole-two obstacle" id="5"></div>
       randomObst1.classList.add("obstacle");
 
-      let ObstacleImage1 = document.createElement("img");
-      ObstacleImage1.src = "./Pics/booscream.gif";
-      randomObst1.appendChild(ObstacleImage1);
-      ObstacleImage1.classList.add("obstacle");
+      let obstacleImage1 = document.createElement("img");
+      console.log(obstacleImage1)
+      obstacleImage1.src = "./Pics/booscream.gif";
+      randomObst1.appendChild(obstacleImage1);
+      obstacleImage1.classList.add("obstacle");
+      //<div class = sqaure mole-two obstacle" id="5"></div> -> <img src = "..." class = "obstacle">
 
 
       let randomIndex2 = getRandom();
-      if (randomIndex2 === randomIndex1 || randomIndex2 === currentMole) {
+      if (randomIndex2 === randomIndex1 || 
+          randomIndex2 === currentMole
+        ) {
         randomIndex2 = getRandom();
       }
       let randomObst2 = squareItem[randomIndex2];
       randomObst2.classList.add("obstacle");
 
-      let ObstacleImage2 = document.createElement("img");
-      ObstacleImage2.src = "./Pics/green.png";
-      randomObst2.appendChild(ObstacleImage2);
-      ObstacleImage2.classList.add("obstacle");
+      let obstacleImage2 = document.createElement("img");
+      obstacleImage2.src = "./Pics/green.png";
+      randomObst2.appendChild(obstacleImage2);
+      obstacleImage2.classList.add("obstacle");
 
 
       let randomIndex3 = getRandom();
@@ -123,10 +144,10 @@ window.onload = function () {
       let randomObst3 = squareItem[randomIndex3];
       randomObst3.classList.add("obstacle");
 
-      let ObstacleImage3 = document.createElement("img");
-      ObstacleImage3.src = "./Pics/blue.png";
-      randomObst3.appendChild(ObstacleImage3);
-      ObstacleImage3.classList.add("obstacle");
+      let obstacleImage3 = document.createElement("img");
+      obstacleImage3.src = "./Pics/blue.png";
+      randomObst3.appendChild(obstacleImage3);
+      obstacleImage3.classList.add("obstacle");
 
       let randomIndex4 = getRandom();
       if (
@@ -140,10 +161,10 @@ window.onload = function () {
       let randomObst4 = squareItem[randomIndex4];
       randomObst4.classList.add("obstacle");
 
-      let ObstacleImage4 = document.createElement("img");
-      ObstacleImage4.src = "./Pics/teacher.png";
-      randomObst4.appendChild(ObstacleImage4);
-      ObstacleImage4.classList.add("obstacle");
+      let obstacleImage4 = document.createElement("img");
+      obstacleImage4.src = "./Pics/teacher.png";
+      randomObst4.appendChild(obstacleImage4);
+      obstacleImage4.classList.add("obstacle");
 
 
       let randomIndex5 = getRandom();
@@ -160,10 +181,10 @@ window.onload = function () {
       let randomObst5 = squareItem[randomIndex5];
       randomObst5.classList.add("obstacle");
 
-      let ObstacleImage5 = document.createElement("img");
-      ObstacleImage5.src = "./Pics/purple.png";
-      randomObst5.appendChild(ObstacleImage5);
-      ObstacleImage5.classList.add("obstacle");
+      let obstacleImage5 = document.createElement("img");
+      obstacleImage5.src = "./Pics/purple.png";
+      randomObst5.appendChild(obstacleImage5);
+      obstacleImage5.classList.add("obstacle");
 
 
     }, 1200);

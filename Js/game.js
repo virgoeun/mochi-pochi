@@ -4,22 +4,16 @@ class Game {
     this.gameScreen = document.querySelector("#game-screen");
     this.gameEndScreen = document.querySelector("#game-end");
 
-    this.gameIsOver = false;
-    this.score = 0;
-    this.miss = 0;
-    this.timeLeft = 60;
+    this.gameIsOver = false; 
   }
-
-
   
+  
+
+
   start() {
-    this.gameScreen.style.width = `${this.width}px`;
-    this.gameScreen.style.height = `${this.height}px`;
     this.startScreen.style.display = "none"; // hide the start screen
     this.gameScreen.style.display = "block";
   }
-
-
     
 
   endGame() 
