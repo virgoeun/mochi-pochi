@@ -11,11 +11,24 @@
       
       <div id="start-screen">
         <div class="music-icon">
-          <h2>Off Music</h2>
           <img id="icon" src="./Pics/musicoff.svg" alt="musicicon">
           <audio id ="mySong">
             <source src="Sound/song1.wav" type="audio/wav">
           </audio>
+          <script>
+            const mySong = document.getElementById("mySong");
+            const icon = document.getElementById("icon");
+            icon.onclick=function() {
+      if(mySong.paused) {
+        mySong.play();
+        icon.src="./Pics/musicon.svg"}
+  else {
+      mySong.pause();
+      icon.src="./Pics/musicoff.svg"}
+  }
+          </script>
+
+    
           </div>
         <img class ="title" src="./Pics/title.png" alt="title"></img>
        <!-- <img class ="mainimage"src="./Pics/boo2.png" alt="mainimage"> -->
@@ -25,12 +38,21 @@
         <img  Id="instructionbutton" src ="./Pics/howtoplay.png" alt="instructionbutton"></img>
     </div>
     </div>
-
-     
-
     
       <div id="game-screen">
+          <audio id=“clickSound” preload = "auto">
+            <source src="Sound/boo.wav" type=“audio/wav”>
+          </audio>
+          <script>
+            const soundEffect =document.getElementById("clickSound");
+
+            clickSound.onclick = function() {
+              clickSound.play();
+  }
+          </script>
+
         <div id="game-container-two"> 
+          
           <h2></h2>
           <h2 id="score-two">Your Score: 0</h2>
           <h2 id="miss-two">Miss: 0</h2>
@@ -50,9 +72,9 @@
         </div> 
        
       </div>
+      </div>
 
-    <div id="game-end">
-     
+    <div id="game-end">   
      <img class="gameover-text" src="./Pics/gameover.png" alt="gameoverbutton" />
      <img class="gameover" src="./Pics/hit.gif" alt="gameover" />
       <br />
@@ -60,16 +82,7 @@
     </div>
 
   </main>
- <!-- <script type="text/javascript" src="js/mochi.js"></script> -->
- <script>
-  mySong = document.getElementById("mySong");
-  icon =document.getElementById("icon");
-      
- mySong.play()
 
-  icon.onclick=function() {
-  mySong.pause(); }
-  </script>
  <script type="text/javascript" src="js/game.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 
