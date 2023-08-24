@@ -7,30 +7,36 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <main> 
-
+    <main>  
+      
       <div id="start-screen">
-        <img class ="maintitle" src="./Icons/new/titletwo.png" alt="maintitle">
-        <img class ="mainimage"src="./Icons/mainimage.png" alt="mainimage">
-        <img class ="startbutton" src="./Icons/new/startbutton.png" alt="startbutton"></img>
-        <img  Id="gameinstruction" src ="./Icons/gameinstruction.png" alt="gameinstruction"></img>
-        <img  Id="instructionbutton" src ="./Icons/gameinstruction.png" alt="instructionbutton"></img>
-      </div>
+        <div class="music-icon">
+          <h2>Off Music</h2>
+          <img id="icon" src="./Pics/musicoff.svg" alt="musicicon">
+          <audio id ="mySong">
+            <source src="Sound/song1.wav" type="audio/wav">
+          </audio>
+          </div>
+        <img class ="title" src="./Pics/title.png" alt="title"></img>
+       <!-- <img class ="mainimage"src="./Pics/boo2.png" alt="mainimage"> -->
+        <div class ="main-button"> 
+        <img  Id="gameinstruction" src ="./Pics/instruction.png" alt="gameinstruction"></img>
+        <img class ="startbutton" src="./Pics/start.png" alt="startbutton"></img>
+        <img  Id="instructionbutton" src ="./Pics/howtoplay.png" alt="instructionbutton"></img>
+    </div>
+    </div>
+
+     
 
     
       <div id="game-screen">
-        <div id="game-container">
-        <img id="panel-control" src="./Icons/stats.png"></img>
-         <img id="score" src="./Icons/score.png"></img>
-        <img id="miss" src="./Icons/miss.png"></img>
-        <img id="time-left" src="./Icons/timeleft.png"></img>
-        </div>
-        <div id="game-container-two"> <!-- inside "game-screen"-->
-          <h2>Your Score</h2>
-          <h2 id="score-two">0</h2>
-          <h2 id="miss-two">0</h2>
+        <div id="game-container-two"> 
+          <h2></h2>
+          <h2 id="score-two">Your Score: 0</h2>
+          <h2 id="miss-two">Miss: 0</h2>
           <h2 id="time-left-two">Time Left:</h2>
-        </div>
+        </div> 
+        
         <div id ="grid">
           <div class = "square" id = "0"> </div>
           <div class = "square" id = "1"> </div>
@@ -46,14 +52,24 @@
       </div>
 
     <div id="game-end">
-     <img class="gameover-image" src="./Icons/gameoverbtn.png" alt="gameover" />
+     
+     <img class="gameover-text" src="./Pics/gameover.png" alt="gameoverbutton" />
+     <img class="gameover" src="./Pics/hit.gif" alt="gameover" />
       <br />
-      <img class="restart-button" src="./Icons/new/restartbutton.png" alt ="restartbutton">Restart</img>
+      <img class="restart-button" src="./Pics/restart.png" alt ="restartbutton"></img>
     </div>
 
   </main>
  <!-- <script type="text/javascript" src="js/mochi.js"></script> -->
-  
+ <script>
+  mySong = document.getElementById("mySong");
+  icon =document.getElementById("icon");
+      
+ mySong.play()
+
+  icon.onclick=function() {
+  mySong.pause(); }
+  </script>
  <script type="text/javascript" src="js/game.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 

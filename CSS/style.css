@@ -7,188 +7,123 @@
     font-family: 'Lilita One';
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
-    
+}
+ 
+
+
+
+#start-screen {
+  background-image: url(../Pics/background.png);
+  background-color: #F27E93;
+  height: 100vh;
+  width:100%;
+  background-repeat: no-repeat;
+  background-position:center;
+  animation: shaking 2s infinite;
 }
 
-
-body {
-    font-family: 'Lilita One';
-    font-style: normal;
-    font-weight: 400;
-   /* text-align: center;*/
-    color:white;
-    height:100vh;
+@keyframes shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
 }
 
-main {
-    height:100vh;
+.mySong {
+
+
 }
 
+#icon {
+  width:5%;
+  cursor:pointer;
+}
+  .title
+  {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
   
-  #start-screen {
+  .mainimage 
+  {
+    display: block;
+    margin-top:-20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+
+  .main-button {
     display:flex;
-    flex-direction: column;
     justify-content: center;
-    background-color: #f2528d;
-    height: 100vh;
-  }
+    flex-direction: row;
+    gap: 150px;
+    }
 
-
-  #start-screen .maintitle
-  {
-    width:500px;
-    height: auto;
-    padding: 0;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-    position: relative;
-    
-
-  }
-  #start-screen .mainimage 
-  {
-    width:300px;
-    height: auto;
-    padding:0;
-    margin-top: -200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0px;
-    position: relative;
-
-
-    
-  }
-  #start-screen .startbutton {
-    width:200px;
-    height: auto;
-    padding :0;
+ .startbutton {
+    width:15%;
+    height:147px;
     margin-top: -50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    position: relative;
-
-
+    margin-right:0;
+    margin-bottom:0;
+    margin-left:0;
   }
 
-  #gameinstruction {
-    width:200px;
-    height:400px;
-    padding :0;
-    margin-top: -50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    position: relative;
-    display:none;
+
+
+
+#gameinstruction {
+  display:block;
+  margin-top:-530px;
+  margin-left:0;
+  margin-right:0;
+  display:none;
   }
-  
   
   
   #instructionbutton {
-    width:150px;
-    height: 70px;
-    padding :0;
-    margin-top: -50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    position: relative;
-    display:block;
-
+    width:15%;
+    height:160px;
+    margin-top: -58px;
+    margin-right:0;
+    margin-bottom:0;
+    margin-left:0;
+    z-index:0;
   }
 
-  
+  #game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    background-image: url(../Pics/bg.png);
+    background-size: cover;
+    height: 100vh
+    }
 
 
-  /* .modal {
-    display:none; /*display by default
-    position: fixed; /*fixed place; */
-    /* width:100px;
-    height:150px;
-    overflow: auto; /*Enable scroll if needed */
-    /* z-index: 1; Sit on top 
-  } */
 
   #game-container-two {
+    font-size:20px;
     color:black;
     display:flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction:column;
+    align-items:flex-start;
+    padding-left:40px;
+    padding-top:20px;
     gap:10px;
     padding-bottom: 20px;
 
   }
-  
 
-  #panel-control {
-    width:250px;
-    height: 200px;
-    display: flex;
-  align-items: center;
-    margin-top: -50px;
-    margin-left: -20px;
-    margin-right: auto;
-    margin-bottom: auto;
-    text-align: center;
-}
-
- #score {
-    width:250px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    margin-top: -100px;
-    margin-left: 30px;
-    margin-right: auto;
-    margin-bottom: auto;
-    text-align: center;
-}
-
-#miss {
-    width:250px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    margin-top: -200px;
-    margin-left: 30px;
-    margin-right: auto;
-    margin-bottom: auto;
-    text-align: center;
-}
-
-#time-left{
-    width:250px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    margin-top: -195px;
-    margin-left: 30px;
-    margin-right: auto;
-    margin-bottom: auto;
-    text-align: center;
-}
-  #game-screen {
-    display: none;
-    align-content: center;
-    height:100vh;
-    background-color: #d2f9ff;
-    margin:0;
-    padding:0;
-  }
-  
 #grid {
-    width:618px; 
-    height:618px; 
+    width:642px; 
+    height:642px; 
     margin: 0 auto;
-    background-color:#d2f9ff;
     background-size: cover;
-    border: 3px solid #cdb9ea;
-    border: radius 25px; ;
+    border: 5px solid #F27E93;
     display:flex;
     flex-wrap: wrap;
     }
@@ -198,14 +133,13 @@ main {
 #grid div {
     width:200px;
     height:200px;
-    border: 3px solid #cdb9ea;
+    border: 7px solid #F27E93;
     }   
     
 .mole {
-   
     width:200px;
     height:200px;
-    background-color: #cdb9ea;
+    background-color: #F7F6EA;
 }
     
 .mole-two {
@@ -217,30 +151,37 @@ main {
 .obstacle {
   width:200px;
   height:200px;
-  background-color: red;
+}
+#game-end {
+  background-color: #F27E93;
+  height:100vh;
+}
+
+.gameover {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
 
 }
 
-.obstacle-two {
-  width:200px;
-  height:200px;
-  background-color: blue;
+.gameover-text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.restart-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 16%;
 
 }
 
-.obstacle-three {
-  width:200px;
-  height:200px;
-  background-color: black;
-
-}
 
 
-            
-  .restart-button {
-
-    
-  }
   #game-end {
     display: none;
   }
