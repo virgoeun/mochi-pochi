@@ -8,12 +8,11 @@
   </head>
   <body>
     <main>  
-      
       <div id="start-screen">
         <div class="music-icon">
-          <img id="icon" src="../Pics/musicoff.svg" alt="musicicon">
+          <img id="icon" src="./Pics/musicoff.svg" alt="musicicon">
           <audio id ="mySong">
-            <source src="Sound/song1.wav" type="audio/wav">
+            <source src=".Sound/song1.wav" type="audio/wav">
           </audio>
           <script>
             const mySong = document.getElementById("mySong");
@@ -21,21 +20,21 @@
             icon.onclick=function() {
       if(mySong.paused) {
         mySong.play();
-        icon.src="../Pics/musicon.svg"}
+        icon.src="/Pics/musicon.svg"}
   else {
       mySong.pause();
-      icon.src="../Pics/musicoff.svg"}
+      icon.src="Pics/musicoff.svg"}
   }
           </script>
 
     
           </div>
-        <img class ="title" src="../Pics/title.png" alt="title"></img>
+        <img class ="title" src="./Pics/title.png" alt="title"></img>
        <!-- <img class ="mainimage"src="./Pics/boo2.png" alt="mainimage"> -->
         <div class ="main-button"> 
-        <img  Id="gameinstruction" src ="../Pics/instruction.png" alt="gameinstruction"></img>
-        <img class ="startbutton" src="../Pics/start.png" alt="startbutton"></img>
-        <img  Id="instructionbutton" src ="../Pics/howtoplay.png" alt="instructionbutton"></img>
+        <img  Id="gameinstruction" src ="./Pics/instruction.png" alt="gameinstruction"></img>
+        <img class ="startbutton" src="./Pics/start.png" alt="startbutton"></img>
+        <img  Id="instructionbutton" src ="./Pics/howtoplay.png" alt="instructionbutton"></img>
     </div>
     </div>
     
@@ -63,10 +62,10 @@
       </div>
 
     <div id="game-end">   
-     <img class="gameover-text" src="../Pics/gameover.png" alt="gameoverbutton" />
-     <img class="gameover" src="../Pics/hit.gif" alt="gameover" />
+     <img class="gameover-text" src="./Pics/gameover.png" alt="gameoverbutton" />
+     <img class="gameover" src="./Pics/hit.gif" alt="gameover" />
       <br />
-      <img class="restart-button" src="../Pics/restart.png" alt ="restartbutton"></img>
+      <img class="restart-button" src="./Pics/restart.png" alt ="restartbutton"></img>
     </div>
 
   </main>

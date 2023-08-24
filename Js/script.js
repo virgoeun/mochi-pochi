@@ -48,7 +48,7 @@ window.onload = function () {
     moleTimerId = setInterval(function () {
       squareItem.forEach((square) => {
         square.classList.remove("mole");
-        square.classList.add("mole-two");
+        square.classList.add("mole-two");d
 
         let existingMoleImage = square.querySelector("img.mole");
         if (existingMoleImage) {
@@ -62,7 +62,7 @@ window.onload = function () {
       currentMole = randomMole.id;
 
       let moleImage = document.createElement("img");
-      moleImage.src = "../Pics/boo.png";
+      moleImage.src = "./Pics/boo.png";
       randomMole.appendChild(moleImage);
       moleImage.classList.add("mole");
     }, 1000);
@@ -103,7 +103,7 @@ window.onload = function () {
       randomObst2.classList.add("obstacle");
 
       let ObstacleImage2 = document.createElement("img");
-      ObstacleImage2.src = "../Pics/green.png";
+      ObstacleImage2.src = "./Pics/green.png";
       randomObst2.appendChild(ObstacleImage2);
       ObstacleImage2.classList.add("obstacle");
 
@@ -120,7 +120,7 @@ window.onload = function () {
       randomObst3.classList.add("obstacle");
 
       let ObstacleImage3 = document.createElement("img");
-      ObstacleImage3.src = "../Pics/blue.png";
+      ObstacleImage3.src = "./Pics/blue.png";
       randomObst3.appendChild(ObstacleImage3);
       ObstacleImage3.classList.add("obstacle");
 
@@ -137,7 +137,7 @@ window.onload = function () {
       randomObst3.classList.add("obstacle");
 
       let ObstacleImage4 = document.createElement("img");
-      ObstacleImage4.src = "../Pics/teacher.png";
+      ObstacleImage4.src = "./Pics/teacher.png";
       randomObst4.appendChild(ObstacleImage4);
       ObstacleImage4.classList.add("obstacle");
     }, 1000);
