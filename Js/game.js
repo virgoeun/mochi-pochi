@@ -5,9 +5,7 @@ class Game {
     this.gameEndScreen = document.querySelector("#game-end");
 
     this.gameIsOver = false; 
-  }
-  
-  
+} 
 
 
   start() {

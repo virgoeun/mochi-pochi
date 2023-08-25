@@ -79,7 +79,7 @@ window.onload = function () {
       currentMole = randomMole.id;
 
       let moleImage = document.createElement("img"); // Create an image element for the mole
-      moleImage.src = "./Pics/boo.png";
+      moleImage.src = "/Pics/boo.png";
       randomMole.appendChild(moleImage);
       moleImage.classList.add("mole"); //<div class = sqaure mole-two mole" id="8"></div> -> <img src = "..." class = "mole">
     }, 1200);
@@ -110,7 +110,7 @@ window.onload = function () {
       randomObst1.classList.add("obstacle");
 
       let obstacleImage1 = document.createElement("img");
-      obstacleImage1.src = "./Pics/booscream.gif";
+      obstacleImage1.src = "/Pics/booscream.gif";
       randomObst1.appendChild(obstacleImage1);
       obstacleImage1.classList.add("obstacle");
       //<div class = sqaure mole-two obstacle" id="5"></div> -> <img src = "..." class = "obstacle">
@@ -124,7 +124,7 @@ window.onload = function () {
       randomObst2.classList.add("obstacle");
 
       let obstacleImage2 = document.createElement("img");
-      obstacleImage2.src = "./Pics/green.png";
+      obstacleImage2.src = "/Pics/green.png";
       randomObst2.appendChild(obstacleImage2);
       obstacleImage2.classList.add("obstacle");
 
@@ -141,7 +141,7 @@ window.onload = function () {
       randomObst3.classList.add("obstacle");
 
       let obstacleImage3 = document.createElement("img");
-      obstacleImage3.src = "./Pics/blue.png";
+      obstacleImage3.src = "/Pics/blue.png";
       randomObst3.appendChild(obstacleImage3);
       obstacleImage3.classList.add("obstacle");
       
@@ -159,7 +159,7 @@ window.onload = function () {
       randomObst4.classList.add("obstacle");
 
       let obstacleImage4 = document.createElement("img");
-      obstacleImage4.src = "./Pics/teacher.png";
+      obstacleImage4.src = "/Pics/teacher.png";
       randomObst4.appendChild(obstacleImage4);
       obstacleImage4.classList.add("obstacle");
      
@@ -179,7 +179,7 @@ window.onload = function () {
       randomObst5.classList.add("obstacle");
 
       let obstacleImage5 = document.createElement("img");
-      obstacleImage5.src = "./Pics/purple.png";
+      obstacleImage5.src = "/Pics/purple.png";
       randomObst5.appendChild(obstacleImage5);
       obstacleImage5.classList.add("obstacle");
     }, 1200);
