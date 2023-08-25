@@ -51,6 +51,7 @@ window.onload = function () {
   //Fucntion: get Random Index
   function getRandom() {
     let randomNum = Math.floor(Math.random() * squareItem.length); // range: 0 - 8
+    console.log(randomNum);
     return randomNum.toString();
   }
 
@@ -81,7 +82,7 @@ window.onload = function () {
       moleImage.src = "./Pics/boo.png";
       randomMole.appendChild(moleImage);
       moleImage.classList.add("mole"); //<div class = sqaure mole-two mole" id="8"></div> -> <img src = "..." class = "mole">
-    }, 1000);
+    }, 1200);
   }
 
   setMole();
@@ -97,7 +98,8 @@ window.onload = function () {
           existingObstacleImage.remove();
         }
       });
-
+       
+      //first obstacle
       let randomIndex1 = getRandom();
       if (randomIndex1 === currentMole) {
         randomIndex1 = getRandom();
@@ -112,7 +114,8 @@ window.onload = function () {
       randomObst1.appendChild(obstacleImage1);
       obstacleImage1.classList.add("obstacle");
       //<div class = sqaure mole-two obstacle" id="5"></div> -> <img src = "..." class = "obstacle">
-
+     
+      //second obstacle
       let randomIndex2 = getRandom();
       if (randomIndex2 === randomIndex1 || randomIndex2 === currentMole) {
         randomIndex2 = getRandom();
@@ -125,6 +128,7 @@ window.onload = function () {
       randomObst2.appendChild(obstacleImage2);
       obstacleImage2.classList.add("obstacle");
 
+      //third obstacle
       let randomIndex3 = getRandom();
       if (
         randomIndex3 === randomIndex1 ||
@@ -140,7 +144,8 @@ window.onload = function () {
       obstacleImage3.src = "./Pics/blue.png";
       randomObst3.appendChild(obstacleImage3);
       obstacleImage3.classList.add("obstacle");
-
+      
+      //fourth obstacle
       let randomIndex4 = getRandom();
       if (
         randomIndex4 === randomIndex1 ||
@@ -157,7 +162,8 @@ window.onload = function () {
       obstacleImage4.src = "./Pics/teacher.png";
       randomObst4.appendChild(obstacleImage4);
       obstacleImage4.classList.add("obstacle");
-
+     
+      //fifth obstacle
       let randomIndex5 = getRandom();
       if (
         randomIndex5 === randomIndex1 ||
@@ -176,11 +182,12 @@ window.onload = function () {
       obstacleImage5.src = "./Pics/purple.png";
       randomObst5.appendChild(obstacleImage5);
       obstacleImage5.classList.add("obstacle");
-    }, 500);
+    }, 1200);
   }
 
   generateObstacle();
 
+//score & miss
   squareItem.forEach((square) =>
     square.addEventListener("click", function () {
       const myAudio = new Audio("/Sound/bubblesound.wav");
@@ -204,6 +211,7 @@ window.onload = function () {
     })
   );
 
+  //Time-left
   function timeCount() {
     currentTime--;
     timeLeft.innerHTML = `Time Left: ${currentTime}`;
