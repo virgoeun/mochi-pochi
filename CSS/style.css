@@ -9,6 +9,7 @@
     font-weight: 400;
   }
 
+
 #start-screen {
   background-image: url(../Pics/background.png);
   background-color: #F27E93;
@@ -109,6 +110,7 @@
     height:642px; 
     overflow: hidden;
     margin: 0 auto;
+    margin-top: -50px;
     background-size: cover;
     border: 5px solid #F27E93;
     display:flex;
@@ -149,6 +151,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top:-5px;
   width: 50%;
 }
 
@@ -156,14 +159,14 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 45%;
+  width: 35%;
 }
 
 .restart-button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top:-60px;
+  margin-top:-30px;
   padding-bottom:20px;
   width: 16%;
   animation: shake 1.5s;
