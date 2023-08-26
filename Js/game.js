@@ -19,6 +19,7 @@ class Game {
     this.gameIsOver = true;
     this.gameScreen.style.display = "none"; // hide the game screen
     this.gameEndScreen.style.display = "block";
+  
   } 
 
   

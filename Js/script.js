@@ -19,7 +19,7 @@ window.onload = function () {
 
   // start-screen instruction pops up control
   instructionButton.addEventListener("click", () => {
-    const startAudio = new Audio("/Sound/softclick.wav");
+    const startAudio = new Audio("./sounds/softclick.wav");
     startAudio.play();
     gameInstruction.style.display = "block";
     instructionButton.style.display = "none";
@@ -27,7 +27,7 @@ window.onload = function () {
   });
 
   gameInstruction.addEventListener("click", () => {
-    const startAudio = new Audio("/Sound/softclick.wav");
+    const startAudio = new Audio("./sounds/softclick.wav");
     startAudio.play();
     instructionButton.style.display = "block";
     gameInstruction.style.display = "none";
@@ -40,7 +40,7 @@ window.onload = function () {
 
   startImage.addEventListener("click", function () {
     startGame();
-    const startAudio = new Audio("/Sound/herewego.wav");
+    const startAudio = new Audio("./sounds/herewego.wav");
     startAudio.play();
   });
 
@@ -51,7 +51,6 @@ window.onload = function () {
   //Fucntion: get Random Index
   function getRandom() {
     let randomNum = Math.floor(Math.random() * squareItem.length); // range: 0 - 8
-    console.log(randomNum);
     return randomNum.toString();
   }
 
@@ -79,7 +78,7 @@ window.onload = function () {
       currentMole = randomMole.id;
 
       let moleImage = document.createElement("img"); // Create an image element for the mole
-      moleImage.src = "/Pics/boo.png";
+      moleImage.src = "./Pics/boo.png";
       randomMole.appendChild(moleImage);
       moleImage.classList.add("mole"); //<div class = sqaure mole-two mole" id="8"></div> -> <img src = "..." class = "mole">
     }, 1200);
@@ -98,7 +97,7 @@ window.onload = function () {
           existingObstacleImage.remove();
         }
       });
-       
+
       //first obstacle
       let randomIndex1 = getRandom();
       if (randomIndex1 === currentMole) {
@@ -110,11 +109,11 @@ window.onload = function () {
       randomObst1.classList.add("obstacle");
 
       let obstacleImage1 = document.createElement("img");
-      obstacleImage1.src = "/Pics/booscream.gif";
+      obstacleImage1.src = "/pics/booscream.gif";
       randomObst1.appendChild(obstacleImage1);
       obstacleImage1.classList.add("obstacle");
       //<div class = sqaure mole-two obstacle" id="5"></div> -> <img src = "..." class = "obstacle">
-     
+
       //second obstacle
       let randomIndex2 = getRandom();
       if (randomIndex2 === randomIndex1 || randomIndex2 === currentMole) {
@@ -124,7 +123,7 @@ window.onload = function () {
       randomObst2.classList.add("obstacle");
 
       let obstacleImage2 = document.createElement("img");
-      obstacleImage2.src = "/Pics/green.png";
+      obstacleImage2.src = "./pics/green.png";
       randomObst2.appendChild(obstacleImage2);
       obstacleImage2.classList.add("obstacle");
 
@@ -141,10 +140,10 @@ window.onload = function () {
       randomObst3.classList.add("obstacle");
 
       let obstacleImage3 = document.createElement("img");
-      obstacleImage3.src = "/Pics/blue.png";
+      obstacleImage3.src = "./pics/blue.png";
       randomObst3.appendChild(obstacleImage3);
       obstacleImage3.classList.add("obstacle");
-      
+
       //fourth obstacle
       let randomIndex4 = getRandom();
       if (
@@ -159,10 +158,10 @@ window.onload = function () {
       randomObst4.classList.add("obstacle");
 
       let obstacleImage4 = document.createElement("img");
-      obstacleImage4.src = "/Pics/teacher.png";
+      obstacleImage4.src = "./pics/teacher.png";
       randomObst4.appendChild(obstacleImage4);
       obstacleImage4.classList.add("obstacle");
-     
+
       //fifth obstacle
       let randomIndex5 = getRandom();
       if (
@@ -179,7 +178,7 @@ window.onload = function () {
       randomObst5.classList.add("obstacle");
 
       let obstacleImage5 = document.createElement("img");
-      obstacleImage5.src = "/Pics/purple.png";
+      obstacleImage5.src = "./pics/purple.png";
       randomObst5.appendChild(obstacleImage5);
       obstacleImage5.classList.add("obstacle");
     }, 1200);
@@ -187,10 +186,10 @@ window.onload = function () {
 
   generateObstacle();
 
-//score & miss
+  //score & miss
   squareItem.forEach((square) =>
     square.addEventListener("click", function () {
-      const myAudio = new Audio("/Sound/bubblesound.wav");
+      const myAudio = new Audio("./sounds/bubblesound.wav");
       myAudio.play();
 
       if (square.id === currentMole) {
@@ -205,7 +204,7 @@ window.onload = function () {
 
       if (miss > 5) {
         game.endGame();
-        const startAudio = new Audio("/Sound/gameover.mp3");
+        const startAudio = new Audio("./sounds/gameover.mp3");
         startAudio.play();
       }
     })
@@ -227,8 +226,12 @@ window.onload = function () {
   countDownTimerId = setInterval(timeCount, 1000);
 
   restartButton.addEventListener("click", function () {
+    const myAudio = new Audio("./sounds/bubblesound.wav");
+    myAudio.play();
     restartGame();
+    
   });
+
   function restartGame() {
     location.reload();
   }
